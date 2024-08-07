@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+
+    {% include 'include/navbar2.html' %}
+
+    <section id="match">
+        <div class="compare">
+            <div class="left">
+                <div class="left_section">
+                    <form  method="POST">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-dark m-auto">Tahmin Et</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="com-container1">
+                {% if result %}
+                    <div class="w-100 text-center mt-3"><h2>Tahmin Sonucu</h2></div>
+                        <div class="d-flex flex-column m-5">
+                            <p><strong>En Uygun Şirket:</strong> {{ result.company_name }}</p>
+                            <p><strong>Öğrenci Konumu:</strong> {{ result.konum }}</p>
+                            <p><strong>Öğrenci Bölümü:</strong> {{ result.bolum }}</p>
+                            <p><strong>Öğrenci Sınıfı:</strong> {{ result.sinif }}</p>
+                            <p><strong>Öğrenci Transkripti:</strong> {{ result.transkript }}</p>
+                            <p><strong>Öğrenci İngilizce Seviyesi:</strong> {{ result.ingilizce_seviyesi }}</p>
+                            <a href="{% url 'basvur' %}"><button type="submit" class="connect-button">BAŞVUR</button></a>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    {% include 'include/footer2.html' %}
+{% endblock body %}

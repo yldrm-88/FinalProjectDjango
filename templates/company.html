@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+
+    {% include 'include/navbar2.html' %}
+    
+    <section id="name" class="section-p1">
+        <h2>Şirketler</h2>
+        <form action="{% url 'company' %}" method="GET">
+            <input class="w-25 mt-3 mb-5 lh-lg" type="text" name="search" value="{{ search }}" placeholder="Arama yapınız.">
+            <button type="submit" class="btn btn-dark mb-1">Ara</button>
+        </form>
+  
+        <div class="com-container">
+            {% for sirket in sirketler %}
+            <div class="company">
+                <a href="{% url 'advert' sirket.id %}" class="text-decoration-none">
+                    {% if sirket.resim %}
+                        <img  src="{{ sirket.resim.url }}" alt="{{ sirket.sirketAdi }}">
+                    {% else %}
+                        <img  src="{% static 'img/placeholder.jpg' %}" alt="Placeholder Image">
+                    {% endif %}
+                    <div class="description">
+                        <h4>{{ sirket.sirketAdi }}</h4>
+                        <span>{{ sirket.sirketTarihi }}</span>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    {% include 'include/footer2.html' %}
+{% endblock body %}

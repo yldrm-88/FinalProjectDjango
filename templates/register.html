@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+    
+  {% include 'include/navbar.html' %}
+  
+  <!-- <form  method="POST" class="text-black w-50 m-auto">
+        {% csrf_token %}
+        {{form.as_p}}
+        {{form}}
+        <button class="btn btn-dark" type="submit"></button>
+      </form>
+      -->    
+ <section class="container">
+    <div class="forms">
+        <div class="from_login">
+            <span class="title">Kayıt Ol!</span>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="input-field">
+                    <input type="text" name="username" placeholder="Kullanıcı adı giriniz.">
+                    <i class="fas fa-user"></i>
+                </div>
+
+               <!-- <div class="input-field">
+                  <input type="email" name="email" placeholder="E-posta adresinizi girin.">
+                  <i class="fas fa-envelope"></i>
+              </div>
+--> 
+                <div class="input-field">
+                    <input type="password" name="password1" placeholder="Şifre giriniz.">
+                    <i class="fas fa-lock"></i>
+                </div>
+
+                <div class="input-field">
+                    <input type="password" name="password2" class="password" placeholder="Şifrenizi tekrar giriniz.">
+                    <i class="fas fa-lock"></i>   
+                </div>
+                <div class="input-field-button">
+                    <input type="submit" value="Üye Ol" class="btn solid">
+                </div>
+                <div><p>Zaten bir hesabınız<a href="{% url 'login'%}" class="text-dark"> var mı?</a></p></div>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+        {% include 'include/footer.html' %}
+{% endblock body %} 

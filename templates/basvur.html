@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+
+    {% include 'include/navbar2.html' %}
+    
+        <section class="container">
+            <div class="forms">
+                <div class="from_login">
+                    <span class="title">Başvuru Oluştur!</span>
+                        <form action="{% url 'basvur' %}" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="input-field">
+                             <input class="w-100" type="text" name="name"  placeholder="Kullanıcı adınızı girin.">
+                            </div>
+                           <div class="input-field">
+                                <input class="w-100" type="text" name="surname"  placeholder="Soyadınızı giriniz."> 
+                            </div>
+                            <div class="input-field">
+                                <input class="w-100" type="text" name="email"  placeholder="E-mailinizi giriniz."> 
+                            </div>
+                            <div class="input-field">
+                                <input class="w-100" type="tel" name="number"  placeholder="Telefon numaranızı giriniz."> 
+                            </div>
+                            <div class="input-field">
+                                <p class="fw-bold mb-1">CV ekleyin</p>
+                                <input type="file" name="file"> 
+                            </div>
+                            <div class="input-field-button">
+                                <input type="submit" value="Gönder" class="btn solid">
+                             </div>
+                        </form>
+                </div>
+            </div>
+        </section>
+
+    {% include 'include/footer2.html' %}
+{% endblock body %}

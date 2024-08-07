@@ -1,0 +1,44 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+
+    {% include 'include/navbar2.html' %}
+    
+    <section id="form-details">
+    <div class="details">    
+   <div class="form">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <span>Mesaj Bırakın <img src="../img/mesaj.jpeg" alt=""></span>
+        <input type="text" name="name" placeholder="Adınız" required>
+        <input type="text" name="email" placeholder="E-mailiniz" required>
+        <textarea name="message" cols="30" rows="10" placeholder="Mesajınızı giriniz." required></textarea>
+        <button class="connect-button" type="submit">Gönder</button>
+      </form>
+   </div>
+
+      <div class="people">
+        <h4 class="mt-3 mb-3  ">Adminlerimiz</h4>
+        <div>
+                <img src="{% static '/img/profile/saliha.jpeg' %}" alt="">
+                <p><span>Saliha Yıldırım</span><br>Yazılım Mühendisi<br>Email:dogaselos@gmail.com</p>
+            </div> 
+            <div>
+                <img src="{% static '/img/profile/hande.jpeg' %}" alt="">
+                <p><span>Hande Karaca</span><br>Yazılım Mühendisi<br>Email:handekaracaa@gmail.com</p>
+            </div> 
+            <div>
+                <img src="{% static '/img/profile/furkann.jpg' %}" alt="">
+                <p><span>Furkan Saygılı</span><br>Yazılım Mühendisi<br>Email:furkaan_34@gmail.com</p>
+            </div>  
+            <div>
+                <img src="{% static '/img/profile/taha.jpg' %}" alt="">
+                <p><span>Taha Aydın</span><br>Yazılım Mühendisi<br>Email:taha_23@gmail.com</p>
+            </div>  
+         </div>
+  </div>
+    </section>
+
+
+    {% include 'include/footer2.html' %}
+{% endblock body %}

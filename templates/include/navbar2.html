@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary" id="header">
+    <div class="container-fluid">
+      <a class="navbar-brand " href="{% url 'company' %}" id="logo" style=" font-size:30px;">staj.net</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav" id="navbar">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'company' %}">Şirketler</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'match' %}">Eşleştir</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">Hakkımızda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'iletisim' %}">İletişim</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Çıkış Yap</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

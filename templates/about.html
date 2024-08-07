@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+
+{% include 'include/navbar2.html' %}
+
+<section id="page-header" class="about-header">
+    <div><h2>#BiziTanıyın</h2></div>
+</section>
+
+<section id="about-head" class="section-p1">
+    {% for about_item in hakkinda %}
+    <div class="about">
+        <h3>{{ about_item.baslik }}</h3>
+        <p>{{ about_item.hakkimizda }}</p>
+    </div>
+
+    <div class="image_about">
+        <img src="{{ about_item.resim.url }}" alt="">
+    </div>
+    {% endfor %}
+</section>
+
+{% include 'include/footer2.html' %}
+{% endblock body %}

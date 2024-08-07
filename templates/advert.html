@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body%}
+{% include 'include/navbar2.html' %}
+    <div class="advert">
+
+      {% for i in sirket %}
+      <div class="section_1">
+        <img  src="{{i.resim.url}}" alt="">
+    </div>
+    <div class="section_2 mt-5">
+        <h3 class="mb-3">{{i.sirketAdi}}</h3>
+        <h5>{{i.sirketTarihi}}</h5>
+        <p>{{i.hakkinda}}</p>
+    </div>
+      {% endfor %}
+
+    </div>
+
+
+    {% include 'include/footer2.html' %}
+    {% endblock body %} 

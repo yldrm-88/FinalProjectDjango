@@ -1,0 +1,1 @@
+#Dizini python paketine dönüştürür.

@@ -1,0 +1,44 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+  
+    {% include 'include/navbar.html' %}
+    
+
+        <section class="container">
+            <div class="forms">
+                <div class="from_login">
+                    <span class="title">Giriş Yap!</span>
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <div class="input-field">
+                             <input type="text" name="userName"  placeholder="Kullanıcı adınızı girin.">
+                             <i class="fas fa-user"></i>
+                            </div>
+
+                           <div class="input-field">
+                                <input type="password" name="userPass" class="password" placeholder="Şifrenizi giriniz.">
+                                 <i class="fas fa-lock"></i>   
+                               </div>
+
+
+                               <div class="checkbox-text">
+                                <div class="checkbox-content">
+                                    <input type="checkbox" id="logCheck">
+                                    <label for="logCheck" class="text">Beni Hatırla</label>
+                                </div>
+                               </div>
+                               <div class="mt-2">Hesabın yoksa şimdi <a href="{% url 'register' %} " class="text-dark ">Kayıt ol!</a></div>
+
+                               <div class="input-field-button">
+                                <input type="submit" value="Giriş Yap" class="btn solid">
+                               </div>
+                                
+
+                        </form>
+                </div>
+            </div>
+        </section>
+
+ {% include 'include/footer.html' %}
+{% endblock body %} 
